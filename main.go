@@ -1,16 +1,13 @@
 package main
 
 import (
-	"encoding/json"
-	"io/ioutil"
 	"log"
-	"os"
 	"os/exec"
-	"qfw/util"
 	"regexp"
 	"strings"
 	"sync"
 	"time"
+	"util"
 
 	"github.com/p/mahonia"
 	"github.com/robfig/cron"
@@ -37,7 +34,7 @@ set _RUNJAVA="%JRE_HOME%\bin\java3540.exe"
 **/
 
 func init() {
-	ReadConfig(&Sysconfig)
+	util.ReadConfig(&Sysconfig)
 	pros := util.ObjArrToMapArr(Sysconfig["program"].([]interface{}))
 	for _, v := range pros {
 		tmp := program{}
@@ -151,17 +148,4 @@ func execPipe(pipe ...*exec.Cmd) (res string) {
 	stdout, serr, err := pipeline.Run(pipe...)
 	log.Println("pipecmd-err-log:", err, string(mahonia.NewDecoder("GBK").ConvertString(serr.String())))
 	return strings.TrimRight(string(mahonia.NewDecoder("GBK").ConvertString(stdout.String())), "\r\n")
-}
-
-//读取配置文件
-func ReadConfig(config ...interface{}) {
-	var r *os.File
-	filepath := "./config.json"
-	if len(config) > 1 {
-		filepath, _ = config[0].(string)
-	}
-	r, _ = os.Open(filepath)
-	defer r.Close()
-	bs, _ := ioutil.ReadAll(r)
-	json.Unmarshal(bs, config[0])
 }
