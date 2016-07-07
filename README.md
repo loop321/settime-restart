@@ -1,8 +1,7 @@
 # settime-restart
  When there are a lot of programs running on a server, settime-restart can help you to restart them regularly.
 # only support windows 
-1.
-config.json配置文件:
+1.config.json配置文件:
 <pre>
 {
 	"program":[
@@ -15,9 +14,8 @@ config.json配置文件:
 	]	
 }
 </pre>
-2.
+2.定时重启tomcat
 <pre>
-定时重启tomcat
 (1).修改 startup.bat 
 CATALINA_HOME为当前tomcat路径 如:set CATALINA_HOME=D:\soft\tomcat2
 
