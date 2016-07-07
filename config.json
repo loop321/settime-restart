@@ -1,0 +1,11 @@
+{
+	"program":[
+		{
+			"name":"网站应用",
+			"startcmd":"D:\\soft\\tomcat\\bin\\startup.bat",
+			"findname":"java_web",
+			"cron":"20 14 13 ? * TUE"			
+		}
+	]	
+
+}
