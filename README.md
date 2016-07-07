@@ -2,23 +2,26 @@
  When there are a lot of programs running on a server, settime-restart can help you to restart them regularly.
 # only support windows 
 1.
-config.jsonÅäÖÃÎÄ¼ş:
+config.jsoné…ç½®æ–‡ä»¶:
+<pre>
 {
 	"program":[
 		{
-			"name":"ÍøÕ¾Ó¦ÓÃ", //Æô¶¯ÈÎÎñÃû³Æ
-			"startcmd":"D:\\soft\\tomcat\\bin\\startup.bat", //Æô¶¯ÃüÁî
-			"findname":"java_web", //½ø³ÌÃû³Æ
-			"cron":"20 14 13 ? * TUE" //ÖØÆôÊ±¼ä£¬×îĞ¡¼ä¸ôÎª1minÒÔÉÏ		
+			"name":"ç½‘ç«™åº”ç”¨", //å¯åŠ¨ä»»åŠ¡åç§°
+			"startcmd":"D:\\soft\\tomcat\\bin\\startup.bat", //å¯åŠ¨å‘½ä»¤
+			"findname":"java_web", //è¿›ç¨‹åç§°
+			"cron":"20 14 13 ? * TUE" //é‡å¯æ—¶é—´ï¼Œæœ€å°é—´éš”ä¸º1minä»¥ä¸Š		
 		}
 	]	
 }
-
+</pre>
 2.
-¶¨Ê±ÖØÆôtomcat
-(1).ĞŞ¸Ä startup.bat 
-CATALINA_HOMEÎªµ±Ç°tomcatÂ·¾¶ Èç:set CATALINA_HOME=D:\soft\tomcat2
+<pre>
+å®šæ—¶é‡å¯tomcat
+(1).ä¿®æ”¹ startup.bat 
+CATALINA_HOMEä¸ºå½“å‰tomcatè·¯å¾„ å¦‚:set CATALINA_HOME=D:\soft\tomcat2
 
-(2).ĞŞ¸Ä setclasspath.bat 
+(2).ä¿®æ”¹ setclasspath.bat 
 copy %JRE_HOME%\bin\java.exe %JRE_HOME%\bin\java_web.exe
 set _RUNJAVA="%JRE_HOME%\bin\java_web.exe"
+</pre>
